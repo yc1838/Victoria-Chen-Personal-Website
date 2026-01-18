@@ -34,7 +34,7 @@ export const SystemUnificationDiagram: React.FC = () => {
         Click <strong>Unify Architecture</strong> to visualize how 4 fragmented registration systems were consolidated into a modern, centralized pipeline.
       </p>
       
-      <div className="relative w-72 h-72 bg-[#F5F4F0] rounded-lg border border-stone-200 p-4 overflow-hidden">
+      <div className="relative w-72 h-72 bg-[#FFF5F7] rounded-lg border border-stone-200 p-4 overflow-hidden">
          {/* Central Unified Core */}
          <div className="absolute inset-0 flex items-center justify-center z-10">
             <motion.div 
@@ -45,14 +45,14 @@ export const SystemUnificationDiagram: React.FC = () => {
             </motion.div>
          </div>
 
-         {/* Connection Lines */}
+         {/* Connection Lines - Updated Stroke Color to Rose */}
          <svg className="absolute inset-0 w-full h-full pointer-events-none z-0">
             {nodes.map((node) => (
                  <motion.line 
                     key={`line-${node.id}`}
                     x1="50%" y1="50%"
                     x2={node.x} y2={node.y}
-                    stroke="#C5A059"
+                    stroke="#D9728E" 
                     strokeWidth="2"
                     initial={{ pathLength: 0, opacity: 0 }}
                     animate={{ pathLength: unified ? 1 : 0, opacity: unified ? 0.5 : 0 }}
@@ -108,13 +108,13 @@ export const DataPipelineDiagram: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center p-8 bg-[#F5F4F0] rounded-xl border border-stone-200 my-8">
+    <div className="flex flex-col items-center p-8 bg-[#FFF5F7] rounded-xl border border-stone-200 my-8 w-full">
       <h3 className="font-serif text-xl mb-4 text-stone-900">Meta Artifact Pipeline</h3>
       <p className="text-sm text-stone-600 mb-6 text-center max-w-md">
         Automated delivery system retrieving ML model metadata via GraphQL and caching assets for Instagram/Facebook.
       </p>
 
-      <div className="relative w-full max-w-lg h-56 bg-white rounded-lg shadow-inner overflow-hidden mb-6 border border-stone-200 flex items-center justify-center gap-4 md:gap-8 p-4">
+      <div className="relative w-full max-w-4xl h-56 bg-white rounded-lg shadow-inner overflow-hidden mb-6 border border-stone-200 flex items-center justify-evenly gap-4 p-8">
         
         {/* Stage 1: Client/Request */}
         <div className="flex flex-col items-center gap-2 relative z-10">
@@ -194,7 +194,7 @@ export const LatencyOptimizationChart: React.FC = () => {
                         Legacy Endpoints (~1000ms)
                      </div>
                      <div className="flex items-center gap-3 text-sm text-nobel-gold">
-                        <span className="w-3 h-3 bg-nobel-gold rounded-sm shadow-[0_0_10px_rgba(197,160,89,0.5)]"></span>
+                        <span className="w-3 h-3 bg-nobel-gold rounded-sm shadow-[0_0_10px_rgba(217,114,142,0.5)]"></span>
                         Optimized System (~20ms)
                      </div>
                 </div>
@@ -217,7 +217,7 @@ export const LatencyOptimizationChart: React.FC = () => {
                 {/* Legacy Bar */}
                 <div className="w-20 flex flex-col items-center z-10 h-full justify-end">
                     <div className="relative w-full h-full flex items-end">
-                         {/* Label at top of bar (which is top of container) */}
+                         {/* Label at top of bar */}
                          <div className="absolute top-0 w-full text-center -mt-8 text-sm font-mono text-stone-400 font-bold bg-stone-900/80 px-1 rounded">1s+</div>
                          <motion.div 
                             className="w-full bg-stone-600 rounded-t-md border-t border-x border-stone-500/30"
@@ -233,10 +233,10 @@ export const LatencyOptimizationChart: React.FC = () => {
                 {/* Optimized Bar */}
                 <div className="w-20 flex flex-col items-center z-10 h-full justify-end">
                      <div className="relative w-full h-full flex items-end">
-                        {/* Label just above the 5% bar */}
+                        {/* Label just above the bar */}
                         <motion.div 
                             className="absolute w-full text-center text-sm font-mono text-nobel-gold font-bold bg-stone-900/80 px-1 rounded"
-                            style={{ bottom: '15%' }}
+                            style={{ bottom: '10%' }}
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
@@ -245,7 +245,7 @@ export const LatencyOptimizationChart: React.FC = () => {
                             20ms
                         </motion.div>
                         <motion.div 
-                            className="w-full bg-nobel-gold rounded-t-md shadow-[0_0_20px_rgba(197,160,89,0.25)] relative overflow-hidden"
+                            className="w-full bg-nobel-gold rounded-t-md shadow-[0_0_20px_rgba(217,114,142,0.25)] relative overflow-hidden"
                             initial={{ height: 0 }}
                             whileInView={{ height: "5%" }}
                             viewport={{ once: true }}

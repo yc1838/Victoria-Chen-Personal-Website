@@ -49,10 +49,11 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#F9F8F4] text-stone-800 selection:bg-nobel-gold selection:text-white">
+    // Updated background to a soft, pinkish white
+    <div className="min-h-screen bg-[#FFF9F9] text-stone-800 selection:bg-nobel-gold selection:text-white">
       
       {/* Navigation */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-[#F9F8F4]/90 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'}`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-[#FFF9F9]/90 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'}`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center gap-4 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             <div className="w-8 h-8 bg-stone-900 rounded-full flex items-center justify-center text-nobel-gold font-serif font-bold text-xl shadow-sm pb-1">Y</div>
@@ -82,7 +83,7 @@ const App: React.FC = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="fixed inset-0 z-40 bg-[#F9F8F4] flex flex-col items-center justify-center gap-8 text-xl font-serif animate-fade-in">
+        <div className="fixed inset-0 z-40 bg-[#FFF9F9] flex flex-col items-center justify-center gap-8 text-xl font-serif animate-fade-in">
             <a href="#about" onClick={scrollToSection('about')} className="hover:text-nobel-gold transition-colors cursor-pointer uppercase">About</a>
             <a href="#experience" onClick={scrollToSection('experience')} className="hover:text-nobel-gold transition-colors cursor-pointer uppercase">Experience</a>
             <a href="#optimization" onClick={scrollToSection('optimization')} className="hover:text-nobel-gold transition-colors cursor-pointer uppercase">Impact</a>
@@ -97,17 +98,17 @@ const App: React.FC = () => {
       <header className="relative h-screen flex items-center justify-center overflow-hidden">
         <HeroScene />
         
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 z-0 pointer-events-none bg-[radial-gradient(circle_at_center,rgba(249,248,244,0.92)_0%,rgba(249,248,244,0.6)_50%,rgba(249,248,244,0.3)_100%)]" />
+        {/* Gradient Overlay - adjusted for warmer tone */}
+        <div className="absolute inset-0 z-0 pointer-events-none bg-[radial-gradient(circle_at_center,rgba(255,249,249,0.92)_0%,rgba(255,249,249,0.6)_50%,rgba(255,249,249,0.3)_100%)]" />
 
         <div className="relative z-10 container mx-auto px-6 text-center">
           <div className="inline-block mb-4 px-3 py-1 border border-nobel-gold text-nobel-gold text-xs tracking-[0.2em] uppercase font-bold rounded-full backdrop-blur-sm bg-white/30">
             Portfolio
           </div>
-          <h1 className="font-serif text-5xl md:text-7xl lg:text-9xl font-medium leading-tight md:leading-[0.9] mb-8 text-stone-900 drop-shadow-sm">
-            Yujing Chen <br/><span className="italic font-normal text-stone-600 text-3xl md:text-5xl block mt-4">Software Engineer</span>
+          <h1 className="font-serif text-5xl md:text-7xl lg:text-9xl font-medium leading-none mb-6 text-stone-900 drop-shadow-sm">
+            Yujing Chen <br/><span className="italic font-normal text-stone-600 text-3xl md:text-5xl block mt-2">Software Engineer</span>
           </h1>
-          <p className="max-w-2xl mx-auto text-lg md:text-xl text-stone-700 font-light leading-relaxed mb-8">
+          <p className="max-w-3xl mx-auto text-lg md:text-xl text-stone-700 font-light leading-relaxed mb-8">
             Specializing in architectural unification, high-performance systems, and full-stack development.
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm text-stone-500 font-medium mb-12">
@@ -182,6 +183,7 @@ const App: React.FC = () => {
         <section className="py-24 bg-stone-900 text-stone-100 overflow-hidden relative">
             <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
                 <div className="w-96 h-96 rounded-full bg-stone-600 blur-[100px] absolute top-[-100px] left-[-100px]"></div>
+                {/* Updated blur color to Rose */}
                 <div className="w-96 h-96 rounded-full bg-nobel-gold blur-[100px] absolute bottom-[-100px] right-[-100px]"></div>
             </div>
 
@@ -209,7 +211,7 @@ const App: React.FC = () => {
         </section>
 
         {/* Optimization Metrics */}
-        <section id="optimization" className="py-24 bg-[#F9F8F4]">
+        <section id="optimization" className="py-24 bg-[#FFF9F9]">
             <div className="container mx-auto px-6">
                 <div className="max-w-4xl mx-auto text-center mb-12">
                     <h2 className="font-serif text-4xl md:text-5xl mb-6 text-stone-900">Performance Optimization</h2>
@@ -227,7 +229,7 @@ const App: React.FC = () => {
         <section className="py-24 bg-white border-t border-stone-200">
              <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12">
                 <div className="md:col-span-5 relative">
-                    <div className="aspect-square bg-[#F5F4F0] rounded-xl overflow-hidden relative border border-stone-200 shadow-inner">
+                    <div className="aspect-square bg-[#FFF5F7] rounded-xl overflow-hidden relative border border-stone-200 shadow-inner">
                         <QuantumComputerScene />
                         <div className="absolute bottom-4 left-0 right-0 text-center text-xs text-stone-400 font-serif italic">Infrastructure & Complexity Management</div>
                     </div>
@@ -256,7 +258,7 @@ const App: React.FC = () => {
         </section>
 
         {/* Education */}
-        <section id="education" className="py-24 bg-[#F5F4F0] border-t border-stone-300">
+        <section id="education" className="py-24 bg-[#FFF5F7] border-t border-stone-300">
            <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
                     <div className="inline-block mb-3 text-xs font-bold tracking-widest text-stone-500 uppercase">ACADEMIC BACKGROUND</div>
